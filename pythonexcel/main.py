@@ -27,7 +27,9 @@ class Excel(object):
         for index, t in enumerate(title):
             sheets.write(title_position, index, t)
 
-    def init_title(self, sheet_name='sheet1'):
+    def init_title(self, sheet_name='sheet1', title=None):
+        if not title is None:
+            self.title = title
         self._init_title(sheets=self.sheet, title=self.title, title_position=self.title_position)
 
     def append_title(self, title):
